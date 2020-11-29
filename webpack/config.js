@@ -1,0 +1,61 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const { NODE_ENV } = process.env;
+
+const isDev = NODE_ENV === 'development';
+
+const resolve = dir => path.resolve(__dirname, '..', dir);
+
+const config = {
+  mode: NODE_ENV,
+  output: {
+    filename: 'js/[name].js',
+    path: resolve('dist'),
+    // publicPath: '/'
+  },
+  resolve: {
+    alias: {
+      pages: resolve('src/pages'),
+      stores: resolve('src/stores'),
+      routes: resolve('src/routes'),
+      layout: resolve('src/layout'),
+      components: resolve('src/components'),
+      styles: resolve('src/styles'),
+    },
+    extensions: ['.jsx', '.js', '.json'],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'react-app-boilerplate',
+      template: resolve('public/index.html'),
+    }),
+    new MiniCssExtractPlugin({
+      filename: isDev ? 'css/[name].css' : 'css/[name].[hash].css',
+      chunkFilename: isDev ? 'css/[id].css' : 'css/[id].[hash].css',
+    }),
+  ],
+};
+
+module.exports = config;
