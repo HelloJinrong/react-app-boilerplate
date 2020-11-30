@@ -1,5 +1,5 @@
 {
-	"**/*.{jsx,js}": [
+	"*.{jsx,js}": [
 		npm run prettier
 	]
 }
