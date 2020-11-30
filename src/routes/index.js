@@ -1,9 +1,6 @@
 import { Redirect } from 'react-router-dom';
-
+import { load, redirect } from './utils';
 import MainLayout from 'layout/MainLayout';
-
-import Page1 from 'pages/Page1';
-import Page2 from 'pages/Page2';
 
 const routes = [
   {
@@ -12,20 +9,20 @@ const routes = [
       {
         path: '/',
         exact: true,
-        component: () => <Redirect to="/page1" />
+        component: redirect('page1'),
       },
       {
         path: '/page1',
         exact: true,
-        component: Page1
+        component: load('Page1'),
       },
       {
         path: '/page2',
         exact: true,
-        component: Page2
-      }
-    ]
-  }
+        component: load('Page2'),
+      },
+    ],
+  },
 ];
 
 export default routes;
