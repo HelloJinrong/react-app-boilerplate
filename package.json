@@ -1,7 +1,7 @@
 {
 	"name": "react-app-boilerplate",
 	"version": "1.0.0",
-	"description": "",
+	"description": "A simple react application boilerplate",
 	"main": "index.js",
 	"scripts": {
 		"dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/config.dev.js",
