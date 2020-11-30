@@ -6,7 +6,8 @@
     "corejs",
     "FaviconsWebpackPlugin",
     "favicons",
-    "arrowParens"
+    "arrowParens",
+    "commitlint"
   ],
   "flagWords": []
 }
