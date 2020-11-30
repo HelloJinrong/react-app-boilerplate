@@ -6,9 +6,9 @@ import { RecoilRoot } from 'recoil';
 import routes from 'routes';
 
 const App = () => (
-  <RecoilRoot>
-    <BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
-  </RecoilRoot>
+	<RecoilRoot>
+		<BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
+	</RecoilRoot>
 );
 
 export default hot(App);
