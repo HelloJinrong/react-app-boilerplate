@@ -1,5 +1,5 @@
 {
-	"*.{jsx,js}": [
-		npm run prettier
+	"**/*.{jsx,js}": [
+		prettier --write
 	]
 }
