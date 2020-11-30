@@ -1,5 +1,8 @@
 {
 	"**/*.{jsx,js}": [
 		prettier --write
+	],
+	"**/*.{css,scss,less,styl}":[
+		stylelint **/*.{css,scss,less,styl} --fix
 	]
 }

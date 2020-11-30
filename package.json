@@ -8,6 +8,7 @@
 		"build": "cross-env NODE_ENV=production webpack --config webpack/config.prod.js",
 		"cspell": "cspell 'src/**/*.{jsx,js,scss}'",
 		"prettier": "prettier --write src/**/*.{jsx,js}",
+		"stylelint": "stylelint **/*.{css,scss,less,styl} --fix",
 		"test": "jest"
 	},
 	"keywords": [

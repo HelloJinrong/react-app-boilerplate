@@ -1,14 +1,15 @@
 {
-  "version": "0.1",
-  "language": "en",
-  "words": [
-    "webpackbar",
-    "corejs",
-    "FaviconsWebpackPlugin",
-    "favicons",
-    "arrowParens",
-    "commitlint",
-    "stylelint"
-  ],
-  "flagWords": []
+	"version": "0.1",
+	"language": "en",
+	"words": [
+		"arrowparens",
+		"commitlint",
+		"corejs",
+		"favicons",
+		"faviconswebpackplugin",
+		"stylelint",
+		"webpackbar",
+		"styl"
+	],
+	"flagWords": []
 }
