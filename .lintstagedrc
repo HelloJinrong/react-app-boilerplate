@@ -1,0 +1,5 @@
+{
+	"**/*.{jsx,js}": [
+		npm run prettier
+	]
+}
