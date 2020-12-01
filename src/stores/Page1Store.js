@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 
 export const numState = atom({
-  key: 'numState',
-  default: 0
+	key: 'numState',
+	default: 0,
 });

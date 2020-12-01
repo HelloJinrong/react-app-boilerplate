@@ -11,5 +11,6 @@
 		"webpackbar",
 		"styl"
 	],
-	"flagWords": []
+	"flagWords": [],
+	"ignorePaths": ["src/assets/**/*"]
 }

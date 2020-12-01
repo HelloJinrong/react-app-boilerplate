@@ -3,4 +3,8 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 
-ReactDOM.render(<App />, document.querySelector('#app'));
+const rootEl = document.createElement('div');
+rootEl.id = 'app';
+document.body.appendChild(rootEl);
+
+ReactDOM.render(<App />, rootEl);
