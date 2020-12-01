@@ -1,0 +1,139 @@
+{
+	// window
+	"window.zoomLevel": 0,
+
+	// editor UI
+	"editor.fontSize": 16,
+	"editor.tabSize": 2,
+	"editor.formatOnType": true,
+	"editor.fontWeight": "500",
+	"editor.formatOnSave": true,
+	"editor.suggestSelection": "first",
+	"editor.wordWrap": "off",
+	// "editor.wrappingColumn": 120,
+	"editor.codeActionsOnSave": {
+		// "source.fixAll": true,
+		"source.fixAll.eslint": true,
+		"source.fixAll.markdownlint": true
+		// "source.fixAll.stylelint": true
+	},
+
+	// javascript
+	"javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+	"javascript.suggestionActions.enabled": false,
+
+	// files
+	"files.autoSave": "afterDelay",
+	"workbench.sideBar.location": "left",
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.colorCustomizations": {
+		"terminal.background": "#fff",
+		"terminal.foreground": "#303030",
+		"terminalCursor.background": "#303030",
+		"terminalCursor.foreground": "#303030",
+		"terminal.ansiBlack": "#F5F5F5",
+		"terminal.ansiBlue": "#6A9FB5",
+		"terminal.ansiBrightBlack": "#B0B0B0",
+		"terminal.ansiBrightBlue": "#6A9FB5",
+		"terminal.ansiBrightCyan": "#75B5AA",
+		"terminal.ansiBrightGreen": "#90A959",
+		"terminal.ansiBrightMagenta": "#AA759F",
+		"terminal.ansiBrightRed": "#AC4142",
+		"terminal.ansiBrightWhite": "#151515",
+		"terminal.ansiBrightYellow": "#F4BF75",
+		"terminal.ansiCyan": "#75B5AA",
+		"terminal.ansiGreen": "#90A959",
+		"terminal.ansiMagenta": "#AA759F",
+		"terminal.ansiRed": "#AC4142",
+		"terminal.ansiWhite": "#303030",
+		"terminal.ansiYellow": "#F4BF75"
+	},
+
+	// Terminal
+	"terminal.integrated.lineHeight": 1,
+	"terminal.integrated.fontSize": 14,
+	"terminal.integrated.fontFamily": "Meslo LG M for Powerline",
+	"terminal.integrated.cursorBlinking": true,
+	"terminal.integrated.rendererType": "dom",
+	"terminal.integrated.cursorStyle": "line",
+
+	//  ESLint
+	"eslint.enable": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"eslint.validate": ["javascript", "javascriptreact", "vue", "html"],
+	"eslint.alwaysShowStatus": true,
+	"eslint.options": {
+		"env": {
+			"browser": true,
+			"es2020": true
+		},
+		"extends": [],
+		"parserOptions": {
+			"ecmaVersion": 12,
+			"sourceType": "module"
+		}
+	},
+
+	// prettier
+	"prettier.enable": true,
+	"prettier.requireConfig": false,
+	"prettier.resolveGlobalModules": true,
+	"prettier.tabWidth": 2,
+	"prettier.semi": true,
+	"prettier.singleQuote": true,
+	"prettier.arrowParens": "avoid",
+	"prettier.bracketSpacing": true,
+	"prettier.trailingComma": "none",
+	"prettier.jsxBracketSameLine": false,
+
+	// cspell
+	"cSpell.language": "en",
+	"cSpell.enabled": true,
+	"cSpell.enableFiletypes": [
+		"css",
+		"git-commit",
+		"html",
+		"python",
+		"go",
+		"javascript",
+		"javascriptreact",
+		"json",
+		"jsx-tags",
+		"markdown",
+		"pug",
+		"sass",
+		"scss",
+		"less",
+		"text",
+		"yaml",
+		"vue"
+	],
+	"cSpell.ignorePaths": [
+		"node_modules", // this will ignore anything the node_modules directory
+		"**/node_modules", // the same for this one
+		"**/node_modules/**", // the same for this one
+		"node_modules/**", // Doesn't currently work due to how the current working directory is determined.
+		"vscode-extension", //
+		".git", // Ignore the .git directory
+		"*.dll", // Ignore all .dll files.
+		"**/*.dll" // Ignore all .dll files
+	],
+	"cSpell.showStatus": true,
+
+	// TODO
+	"todo-tree.tree.showScanModeButton": false,
+
+	// jsx snippet
+	"editor.snippetSuggestions": "top",
+
+	// markdownlint
+	"markdownlint.ignore": ["node_modules/**/*.md"],
+	"markdownlint.config": {
+		"default": true,
+		"MD029": { "ol": "ordered" }
+	}
+}
