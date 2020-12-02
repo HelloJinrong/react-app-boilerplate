@@ -9,7 +9,8 @@
 		"faviconswebpackplugin",
 		"stylelint",
 		"webpackbar",
-		"styl"
+		"styl",
+		"portfinder"
 	],
 	"flagWords": [],
 	"ignorePaths": ["src/assets/**/*"]
