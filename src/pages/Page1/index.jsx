@@ -1,6 +1,7 @@
-import { useRecoilState } from 'recoil';
+import { useEffect } from 'react';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { useHistory } from 'react-router-dom';
-import { numState } from 'stores/Page1Store';
+import { numState, describeUsers } from 'stores/Page1Store';
 
 import cent_os from 'assets/os/cent_os.png';
 
@@ -15,6 +16,16 @@ const Page1 = () => {
 	const decNum = () => setNum(num - 1);
 
 	const handleToPage = () => history.push('/page2');
+
+	const users = useRecoilValue(describeUsers);
+
+	// eslint-disable-next-line no-console
+	console.log('users =', users);
+
+	// users().then(res => {
+	// 	// eslint-disable-next-line no-console
+	// 	console.log('res =', res);
+	// });
 
 	return (
 		<div className="page1">

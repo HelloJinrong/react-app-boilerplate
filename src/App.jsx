@@ -1,3 +1,4 @@
+import { Suspense, ErrorBoundary } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { hot } from 'react-hot-loader/root';
@@ -7,7 +8,11 @@ import routes from 'routes';
 
 const App = () => (
 	<RecoilRoot>
-		<BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
+		{/* <<ErrorBoundary> */}
+		<Suspense fallback={<div>Loading...</div>}>
+			<BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
+		</Suspense>
+		{/* </ErrorBoundary> */}
 	</RecoilRoot>
 );
 
