@@ -7,6 +7,7 @@
 		"dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/config.dev.js",
 		"build": "cross-env NODE_ENV=production webpack --config webpack/config.prod.js",
 		"build:dll": "webpack --config webpack/config.dll.js --mode development",
+		"mock": "node server/app.js",
 		"cspell": "cspell 'src/**/*.{jsx,js,scss}'",
 		"prettier": "prettier --write 'src/**/*.{jsx,js}'",
 		"stylelint": "stylelint **/*.{css,scss,less,styl} --fix",
@@ -68,13 +69,19 @@
 	},
 	"dependencies": {
 		"@loadable/component": "^5.14.1",
+		"axios": "^0.21.0",
+		"koa": "^2.13.0",
+		"koa-bodyparser": "^4.3.0",
+		"koa-cors": "0.0.16",
+		"koa-router": "^10.0.0",
 		"lodash": "^4.17.20",
 		"prop-types": "^15.7.2",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
 		"react-router-config": "^5.1.1",
 		"react-router-dom": "^5.2.0",
-		"recoil": "^0.1.2"
+		"recoil": "^0.1.2",
+		"swr": "^0.3.9"
 	},
 	"husky": {
 		"hooks": {

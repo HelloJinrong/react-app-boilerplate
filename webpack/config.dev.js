@@ -32,6 +32,12 @@ const config = merge(baseConf, {
 		compress: true,
 		overlay: true,
 		stats: 'errors-only',
+		proxy: {
+			'/api': {
+				target: 'http://localhost:3001',
+				pathRewrite: { '^/api': '' },
+			},
+		},
 	},
 	plugins: [
 		new WebpackBar({
