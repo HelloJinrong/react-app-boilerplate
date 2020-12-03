@@ -1,9 +1,11 @@
 const path = require('path');
+const webpack = require('webpack');
 const WebpackBar = require('webpackbar');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const { merge } = require('webpack-merge');
 const portfinder = require('portfinder');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 
 const baseConf = require('./config');
 
@@ -25,6 +27,7 @@ const config = merge(baseConf, {
 		historyApiFallback: true,
 		hot: true,
 		quiet: true,
+		contentBase: [resolve('dll')],
 		publicPath: '/',
 		compress: true,
 		overlay: true,
@@ -38,6 +41,16 @@ const config = merge(baseConf, {
 		new ESLintPlugin({
 			extensions: ['.js', '.jsx'],
 		}),
+		new webpack.DllReferencePlugin({
+			manifest: require(resolve('dll/vendor-manifest.json')),
+		}),
+		new AddAssetHtmlPlugin([
+			{
+				filepath: resolve('dll/vendor.js'),
+				outputPath: 'vendor',
+				publicPath: '/',
+			},
+		]),
 	],
 });
 

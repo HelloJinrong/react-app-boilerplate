@@ -24,6 +24,7 @@ const config = {
 			components: resolve('src/components'),
 			styles: resolve('src/styles'),
 			assets: resolve('src/assets'),
+			utils: resolve('src/utils'),
 		},
 		extensions: ['.jsx', '.js', '.json'],
 	},
@@ -32,7 +33,13 @@ const config = {
 			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
-				loader: 'babel-loader',
+				use: {
+					loader: 'babel-loader',
+					options: {
+						cacheDirectory: true,
+						cacheCompression: true,
+					},
+				},
 			},
 			{
 				test: /\.s[ac]ss$/i,
