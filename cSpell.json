@@ -10,7 +10,8 @@
 		"stylelint",
 		"webpackbar",
 		"styl",
-		"portfinder"
+		"portfinder",
+		"qinghuanI"
 	],
 	"flagWords": [],
 	"ignorePaths": ["src/assets/**/*"]
