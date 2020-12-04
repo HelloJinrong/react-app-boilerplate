@@ -11,13 +11,25 @@ export const numState = atom({
 export const describeUsers = selectorFamily({
 	key: 'describeUsers',
 	get: () => async ({ get }) => {
-		const { url } = get(numState);
-		const response = await axios.get(url);
+		const { url, type } = get(numState);
+		let response = null;
+
+		switch (type) {
+			case '过滤':
+				response = await axios.get(url);
+				break;
+			case '删除':
+				response = await axios.get(url);
+				break;
+			default:
+				response = await axios.get(url);
+				break;
+		}
 
 		return response.data;
 	},
-	set: () => ({ set }, { url }) => {
-		set(numState, previousState => ({ ...previousState, url }));
+	set: () => ({ set }, payload) => {
+		set(numState, previousState => ({ ...previousState, ...payload }));
 	},
 });
 

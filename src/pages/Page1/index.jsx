@@ -9,7 +9,7 @@ import './index.scss';
 
 const Page1 = () => {
 	const history = useHistory();
-	const [{ url }, setNum] = useRecoilState(numState);
+	const [{ url }] = useRecoilState(numState);
 
 	const handleToPage = () => history.push('/page2');
 
@@ -19,7 +19,7 @@ const Page1 = () => {
 	console.log('users =', users);
 
 	const handleSetUser = () => {
-		setUser({ url: '/api/users' });
+		setUser({ type: '过滤', url: '/api/users' });
 	};
 
 	const len = useRecoilValue(lengthData);
@@ -32,7 +32,6 @@ const Page1 = () => {
 			</p>
 			<div>
 				<button onClick={handleToPage}>to Page2</button>
-
 				<button onClick={handleSetUser}>点击</button>
 			</div>
 			<img src={cent_os} alt="cent_os" />
