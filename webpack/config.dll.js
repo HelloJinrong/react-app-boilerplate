@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const resolve = dir => path.resolve(__dirname, '..', dir);
 
 const config = {
+	devtool: 'eval-cheap-module-source-map',
 	entry: {
 		vendor: [
 			'@loadable/component',
