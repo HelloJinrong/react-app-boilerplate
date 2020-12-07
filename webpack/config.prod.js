@@ -7,20 +7,21 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const baseConf = require('./config');
 
 const config = {
-  devtool: false,
-  performance: {
-    hints: false,
-  },
-  optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
-  },
-  plugins: [
-    new Webpackbar({
-      name: 'production',
-    }),
-    new CleanWebpackPlugin(),
-  ],
+	devtool: false,
+	performance: {
+		hints: false,
+	},
+	optimization: {
+		usedExports: true,
+		minimize: true,
+		minimizer: [new TerserPlugin()],
+	},
+	plugins: [
+		new Webpackbar({
+			name: 'production',
+		}),
+		new CleanWebpackPlugin(),
+	],
 };
 
 module.exports = merge(baseConf, config);
