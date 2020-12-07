@@ -11,7 +11,8 @@
 		"webpackbar",
 		"styl",
 		"portfinder",
-		"qinghuanI"
+		"qinghuanI",
+		"formik"
 	],
 	"flagWords": [],
 	"ignorePaths": ["src/assets/**/*"]
