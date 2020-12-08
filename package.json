@@ -72,6 +72,7 @@
 		"@loadable/component": "^5.14.1",
 		"axios": "^0.21.0",
 		"dayjs": "^1.9.7",
+		"formik": "^2.2.5",
 		"koa": "^2.13.0",
 		"koa-bodyparser": "^4.3.0",
 		"koa-cors": "0.0.16",
