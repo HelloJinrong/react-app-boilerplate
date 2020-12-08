@@ -83,12 +83,17 @@
 		"react-router-config": "^5.1.1",
 		"react-router-dom": "^5.2.0",
 		"recoil": "^0.1.2",
-		"swr": "^0.3.9"
+		"swr": "^0.3.9",
+		"yup": "^0.32.1"
 	},
 	"husky": {
 		"hooks": {
 			"pre-commit": "lint-staged",
 			"commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
 		}
-	}
+	},
+	"sideEffects": [
+		"./src/**/*.scss",
+		"./src/**/*.css"
+	]
 }
