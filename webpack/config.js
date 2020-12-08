@@ -1,4 +1,5 @@
 const path = require('path');
+const { DefinePlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -33,13 +34,19 @@ const config = {
 			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						cacheDirectory: true,
-						cacheCompression: true,
+				use: [
+					{
+						loader: 'babel-loader',
+						options: {
+							cacheDirectory: true,
+							cacheCompression: true,
+						},
 					},
-				},
+					{
+						loader: 'react-dev-inspector/plugins/webpack/inspector-loader',
+						options: { exclude: '' },
+					},
+				],
 			},
 			{
 				test: /\.s[ac]ss$/i,
@@ -73,6 +80,9 @@ const config = {
 		new MiniCssExtractPlugin({
 			filename: isDev ? 'css/[name].css' : 'css/[name].[hash].css',
 			chunkFilename: isDev ? 'css/[id].css' : 'css/[id].[hash].css',
+		}),
+		new DefinePlugin({
+			'process.env.PWD': JSON.stringify(process.cwd()),
 		}),
 	],
 };

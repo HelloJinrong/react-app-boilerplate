@@ -22,6 +22,15 @@ router.get('/users', async ctx => {
 	];
 });
 
+router.get('/usersAll', async ctx => {
+	ctx.body = [
+		{
+			name: 'qin',
+			age: 24,
+		},
+	];
+});
+
 router.post('/users/add', async ctx => {
 	// eslint-disable-next-line no-console
 	console.log(111, ctx.request.body);

@@ -8,39 +8,39 @@ export const numState = atom({
 	},
 });
 
-export const describeUsers = selectorFamily({
-	key: 'describeUsers',
-	get: () => async ({ get }) => {
-		const { url, type } = get(numState);
-		let response = null;
+// export const describeUsers = selectorFamily({
+// 	key: 'describeUsers',
+// 	get: () => async ({ get }) => {
+// 		const { url, type } = get(numState);
+// 		let response = null;
 
-		switch (type) {
-			case '过滤':
-				response = await axios.get(url);
-				break;
-			case '删除':
-				response = await axios.get(url);
-				break;
-			default:
-				response = await axios.get(url);
-				break;
-		}
+// 		switch (type) {
+// 			case '过滤':
+// 				response = await axios.get(url);
+// 				break;
+// 			case '删除':
+// 				response = await axios.get(url);
+// 				break;
+// 			default:
+// 				response = await axios.get(url);
+// 				break;
+// 		}
 
-		return response.data;
-	},
-	set: () => ({ set }, payload) => {
-		set(numState, previousState => ({ ...previousState, ...payload }));
-	},
-});
+// 		return response.data;
+// 	},
+// 	set: () => ({ set }, payload) => {
+// 		set(numState, previousState => ({ ...previousState, ...payload }));
+// 	},
+// });
 
-export const lengthData = selector({
-	key: 'lengthData',
-	get: async ({ get }) => {
-		const data = await get(describeUsers());
+// export const lengthData = selector({
+// 	key: 'lengthData',
+// 	get: async ({ get }) => {
+// 		const data = await get(describeUsers());
 
-		return data.length;
-	},
-});
+// 		return data.length;
+// 	},
+// });
 
 /* 
 

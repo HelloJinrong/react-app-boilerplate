@@ -1,9 +1,9 @@
 {
 	// window
-	"window.zoomLevel": 0,
+	"window.zoomLevel": 0.5,
 
 	// editor UI
-	"editor.fontSize": 16,
+	"editor.fontSize": 18,
 	"editor.tabSize": 2,
 	"editor.formatOnType": true,
 	"editor.fontWeight": "500",

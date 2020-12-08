@@ -6,6 +6,9 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const { merge } = require('webpack-merge');
 const portfinder = require('portfinder');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+const {
+	createLaunchEditorMiddleware,
+} = require('react-dev-inspector/plugins/webpack');
 
 const baseConf = require('./config');
 
@@ -24,6 +27,9 @@ const config = merge(baseConf, {
 		hints: false,
 	},
 	devServer: {
+		before: app => {
+			app.use(createLaunchEditorMiddleware());
+		},
 		historyApiFallback: true,
 		hot: true,
 		quiet: true,

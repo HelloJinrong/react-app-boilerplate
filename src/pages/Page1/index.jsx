@@ -1,38 +1,26 @@
-import { useEffect } from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
 import { useHistory } from 'react-router-dom';
-import { numState, describeUsers, lengthData } from 'stores/Page1Store';
+import { getCurrentTime } from 'utils/datetime';
 
 import cent_os from 'assets/os/cent_os.png';
 
 import './index.scss';
 
+import dayjs from 'dayjs';
+// eslint-disable-next-line no-console
+console.log('time =', dayjs('2003-1-4').format('MM-DD-YYYY'));
+
 const Page1 = () => {
 	const history = useHistory();
-	const [{ url }] = useRecoilState(numState);
 
 	const handleToPage = () => history.push('/page2');
-
-	const [users, setUser] = useRecoilState(describeUsers());
-
-	// eslint-disable-next-line no-console
-	console.log('users =', users);
-
-	const handleSetUser = () => {
-		setUser({ type: '过滤', url: '/api/users' });
-	};
-
-	const len = useRecoilValue(lengthData);
 
 	return (
 		<div className="page1">
 			this is Page1 component!
-			<p>
-				{url} ----- {len}
-			</p>
+			<p></p>
 			<div>
 				<button onClick={handleToPage}>to Page2</button>
-				<button onClick={handleSetUser}>点击</button>
+				<button>点击</button>
 			</div>
 			<img src={cent_os} alt="cent_os" />
 		</div>

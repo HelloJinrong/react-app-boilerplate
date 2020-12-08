@@ -52,6 +52,7 @@
 		"postcss": "^8.1.10",
 		"postcss-loader": "^4.1.0",
 		"prettier": "^2.2.1",
+		"react-dev-inspector": "^1.1.0",
 		"react-hot-loader": "^4.13.0",
 		"sass": "^1.29.0",
 		"sass-loader": "^10.1.0",
@@ -70,6 +71,7 @@
 	"dependencies": {
 		"@loadable/component": "^5.14.1",
 		"axios": "^0.21.0",
+		"dayjs": "^1.9.7",
 		"koa": "^2.13.0",
 		"koa-bodyparser": "^4.3.0",
 		"koa-cors": "0.0.16",
