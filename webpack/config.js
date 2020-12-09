@@ -13,7 +13,7 @@ const config = {
 	mode: NODE_ENV,
 	output: {
 		filename: 'js/[name].js',
-		path: resolve('dist'),
+		path: resolve('dist')
 		// publicPath: '/'
 	},
 	resolve: {
@@ -26,9 +26,9 @@ const config = {
 			styles: resolve('src/styles'),
 			assets: resolve('src/assets'),
 			utils: resolve('src/utils'),
-			'react-dom': '@hot-loader/react-dom',
+			'react-dom': '@hot-loader/react-dom'
 		},
-		extensions: ['.jsx', '.js', '.json'],
+		extensions: ['.jsx', '.js', '.json']
 	},
 	module: {
 		rules: [
@@ -40,25 +40,25 @@ const config = {
 						loader: 'babel-loader',
 						options: {
 							cacheDirectory: true,
-							cacheCompression: true,
-						},
+							cacheCompression: true
+						}
 					},
 					{
 						loader: 'react-dev-inspector/plugins/webpack/inspector-loader',
-						options: { exclude: '' },
-					},
-				],
+						options: { exclude: '' }
+					}
+				]
 			},
 			{
 				test: /\.s[ac]ss$/i,
 				use: [
 					{
-						loader: MiniCssExtractPlugin.loader,
+						loader: MiniCssExtractPlugin.loader
 					},
 					'css-loader',
 					'postcss-loader',
-					'sass-loader',
-				],
+					'sass-loader'
+				]
 			},
 			{
 				test: /\.(png|jpg|gif)$/,
@@ -66,26 +66,26 @@ const config = {
 					{
 						loader: 'url-loader',
 						options: {
-							limit: 8192,
-						},
-					},
-				],
-			},
-		],
+							limit: 8192
+						}
+					}
+				]
+			}
+		]
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: 'react-app-boilerplate',
-			path: resolve('public/index.html'),
+			path: resolve('public/index.html')
 		}),
 		new MiniCssExtractPlugin({
 			filename: isDev ? 'css/[name].css' : 'css/[name].[hash].css',
-			chunkFilename: isDev ? 'css/[id].css' : 'css/[id].[hash].css',
+			chunkFilename: isDev ? 'css/[id].css' : 'css/[id].[hash].css'
 		}),
 		new DefinePlugin({
-			'process.env.PWD': JSON.stringify(process.cwd()),
-		}),
-	],
+			'process.env.PWD': JSON.stringify(process.cwd())
+		})
+	]
 };
 
 module.exports = config;
