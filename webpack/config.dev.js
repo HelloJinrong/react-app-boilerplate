@@ -7,7 +7,7 @@ const { merge } = require('webpack-merge');
 const portfinder = require('portfinder');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const {
-	createLaunchEditorMiddleware,
+	createLaunchEditorMiddleware
 } = require('react-dev-inspector/plugins/webpack');
 
 const baseConf = require('./config');
@@ -24,7 +24,7 @@ const config = merge(baseConf, {
 	entry: ['./src/index.js'],
 	devtool: 'eval-cheap-module-source-map',
 	performance: {
-		hints: false,
+		hints: false
 	},
 	devServer: {
 		before: app => {
@@ -41,29 +41,29 @@ const config = merge(baseConf, {
 		proxy: {
 			'/api': {
 				target: 'http://localhost:3001',
-				pathRewrite: { '^/api': '' },
-			},
-		},
+				pathRewrite: { '^/api': '' }
+			}
+		}
 	},
 	plugins: [
 		new WebpackBar({
-			name: 'development',
+			name: 'development'
 		}),
 		new FaviconsWebpackPlugin(resolve('public/favicon.ico')),
 		new ESLintPlugin({
-			extensions: ['.js', '.jsx'],
+			extensions: ['.js', '.jsx']
 		}),
 		new webpack.DllReferencePlugin({
-			manifest: require(resolve('dll/vendor-manifest.json')),
+			manifest: require(resolve('dll/vendor-manifest.json'))
 		}),
 		new AddAssetHtmlPlugin([
 			{
 				filepath: resolve('dll/vendor.js'),
 				outputPath: 'vendor',
-				publicPath: '/',
-			},
-		]),
-	],
+				publicPath: '/'
+			}
+		])
+	]
 });
 
 module.exports = new Promise((resolve, reject) => {

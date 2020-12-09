@@ -13,12 +13,12 @@ router.get('/users', async ctx => {
 	ctx.body = [
 		{
 			name: 'qin',
-			age: 24,
+			age: 24
 		},
 		{
 			name: 'zha',
-			age: 26,
-		},
+			age: 26
+		}
 	];
 });
 
@@ -26,8 +26,8 @@ router.get('/usersAll', async ctx => {
 	ctx.body = [
 		{
 			name: 'qin',
-			age: 24,
-		},
+			age: 24
+		}
 	];
 });
 
@@ -38,8 +38,8 @@ router.post('/users/add', async ctx => {
 	ctx.body = [
 		{
 			name: 'qin3',
-			age: 27,
-		},
+			age: 27
+		}
 	];
 });
 

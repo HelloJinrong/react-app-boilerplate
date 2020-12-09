@@ -1,4 +1,3 @@
-const path = require('path');
 const Webpackbar = require('webpackbar');
 const TerserPlugin = require('terser-webpack-plugin');
 const { merge } = require('webpack-merge');
@@ -9,19 +8,19 @@ const baseConf = require('./config');
 const config = {
 	devtool: false,
 	performance: {
-		hints: false,
+		hints: false
 	},
 	optimization: {
 		usedExports: true,
 		minimize: true,
-		minimizer: [new TerserPlugin()],
+		minimizer: [new TerserPlugin()]
 	},
 	plugins: [
 		new Webpackbar({
-			name: 'production',
+			name: 'production'
 		}),
-		new CleanWebpackPlugin(),
-	],
+		new CleanWebpackPlugin()
+	]
 };
 
 module.exports = merge(baseConf, config);

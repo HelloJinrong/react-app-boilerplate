@@ -15,23 +15,23 @@ const config = {
 			'react-router-config',
 			'react-router-dom',
 			'recoil',
-			'lodash',
-		],
+			'lodash'
+		]
 	},
 	output: {
 		filename: '[name].js',
 		path: resolve('dll'),
-		library: '[name]',
+		library: '[name]'
 	},
 	plugins: [
 		new WebpackBar({
-			name: 'build dll',
+			name: 'build dll'
 		}),
 		new webpack.DllPlugin({
 			name: '[name]',
-			path: resolve('dll/[name]-manifest.json'),
-		}),
-	],
+			path: resolve('dll/[name]-manifest.json')
+		})
+	]
 };
 
 module.exports = config;
