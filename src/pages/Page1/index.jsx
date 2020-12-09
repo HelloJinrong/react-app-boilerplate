@@ -28,7 +28,7 @@ const Page1 = () => {
 
 	return (
 		<div className="page1">
-			this is Page1 component!
+			this is Page1 component333!
 			<div>
 				<button onClick={handleToPage}>to Page2</button>
 				<button onClick={handleClick}>点击</button>
