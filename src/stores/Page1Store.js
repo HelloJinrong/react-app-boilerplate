@@ -1,11 +1,11 @@
-import { atom, selectorFamily, selector } from 'recoil';
-import axios from 'axios';
+import { atom } from 'recoil';
+// import axios from 'axios';
 
 export const numState = atom({
 	key: 'numState',
 	default: {
-		url: '/api/usersAll',
-	},
+		url: '/api/usersAll'
+	}
 });
 
 // export const describeUsers = selectorFamily({
@@ -42,10 +42,9 @@ export const numState = atom({
 // 	},
 // });
 
-/* 
+/*
 
-	1. recoil request 
-	2. useSWR fetcher 
-
+	1. recoil request
+	2. useSWR fetcher
 
 */

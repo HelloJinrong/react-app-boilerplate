@@ -14,15 +14,15 @@ export const setToken = val => {
 
 const fetcher = (channel, method = 'GET', data = '') => {
 	let response = null;
-	let options = {
-		headers: {},
+	const options = {
+		headers: {}
 	};
 
 	const requestUrl = `${baseUrl}${channel}`;
 
 	if (token) {
 		Object.assign(options.headers, {
-			token,
+			token
 		});
 	}
 
@@ -35,9 +35,9 @@ const fetcher = (channel, method = 'GET', data = '') => {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json; charset=utf-8',
-				...options.headers,
+				...options.headers
 			},
-			body: data,
+			body: data
 		})
 			.then(res => res.json())
 			.catch(err => console.error(err));

@@ -13,8 +13,8 @@ const MainLayout = ({ route }) => {
 	);
 };
 
-MainLayout.propsTypes = {
-	route: PropTypes.object.isRequired,
+MainLayout.propTypes = {
+	route: PropTypes.object.isRequired
 };
 
 export default withRouter(MainLayout);

@@ -15,7 +15,7 @@ const Page2 = () => {
 
 export default Page2;
 
-/* 
+/*
 	1.再封装一个 fetcher 方法
-	2. 
+	2.
 */
