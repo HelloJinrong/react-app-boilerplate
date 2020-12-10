@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import './index.scss';
+import { isFormData } from 'utils/isFormData';
 
-const set = new Set();
+import './index.scss';
 
 const Page1 = () => {
 	const history = useHistory();
@@ -15,16 +15,28 @@ const Page1 = () => {
 		console.log(111);
 	};
 
-	const handleClick2 = () => {
+	const handleClick2 = async () => {
+		// eslint-disable-next-line no-undef
+		const formData = new FormData();
+
+		formData.append('name', 'qin');
+		formData.append('address', 'wuhan');
+
+		const value = await fetch('http://localhost:3001/users/add', {
+			method: 'POST',
+			// headers: { 'Content-Type': 'multipart/form-data' },
+			// body: formData
+			body: JSON.stringify({ name: 'qin', age: 27 })
+		}).then(res => res.json());
+
 		// eslint-disable-next-line no-console
-		console.log(222);
+		console.log('value = ', value);
 	};
 
-	useEffect(() => {
-		set.add(handleClick2);
-		// eslint-disable-next-line no-console
-		console.log('length =', set.size);
-	}, []);
+	// eslint-disable-next-line no-undef
+	const formData = new FormData();
+	// eslint-disable-next-line no-console
+	console.log(isFormData(formData));
 
 	return (
 		<div className="page1">
@@ -32,7 +44,7 @@ const Page1 = () => {
 			<div>
 				<button onClick={handleToPage}>to Page2</button>
 				<button onClick={handleClick}>点击</button>
-				<button onClick={handleClick2}>点击2</button>
+				<button onClick={handleClick2}>使用 formData 传参</button>
 			</div>
 		</div>
 	);
