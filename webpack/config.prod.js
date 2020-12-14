@@ -1,9 +1,13 @@
+const path = require('path');
 const Webpackbar = require('webpackbar');
 const TerserPlugin = require('terser-webpack-plugin');
 const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const baseConf = require('./config');
+
+const resolve = dir => path.resolve(__dirname, '..', dir);
 
 const config = {
 	devtool: false,
@@ -19,7 +23,10 @@ const config = {
 		new Webpackbar({
 			name: 'production'
 		}),
-		new CleanWebpackPlugin()
+		new CleanWebpackPlugin(),
+		new CopyPlugin({
+			patterns: [{ from: resolve('public/favicon.ico'), to: resolve('dist') }]
+		})
 	]
 };
 
