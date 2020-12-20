@@ -3,8 +3,18 @@
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"module": "commonjs",
+		"target": "esnext",
 		"baseUrl": ".",
-		"target": "esnext"
+		"paths": {
+			"pages": ["./src/pages"],
+			"routes": ["./src/routes"],
+			"layout": ["./src/layout"],
+			"stores": ["./src/stores"],
+			"styles": ["./src/styles"],
+			"utils": ["./src/utils"],
+			"components": ["./src/components"],
+			"assets": ["./src/assets"],
+		}
 	},
 	"exclude": ["node_modules", "dist", "tests"]
 }
