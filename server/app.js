@@ -33,7 +33,7 @@ router.get('/usersAll', async ctx => {
 
 router.post('/users/add', async ctx => {
 	// eslint-disable-next-line no-console
-	console.log(111, ctx.request.body);
+	console.log(111, ctx.request.body, typeof ctx.request.body);
 
 	ctx.body = [
 		{

@@ -29,6 +29,7 @@ module.exports = {
 		// react
 		'react/jsx-uses-react': 'error',
 		'react/jsx-uses-vars': 'error',
+
 		// import
 		'import/no-unresolved': 0,
 		'import/named': 2,
@@ -58,6 +59,7 @@ module.exports = {
 		'react/prop-types': 2
 	},
 	globals: {
-		fetch: true
+		fetch: true,
+		FormData: true
 	}
 };
