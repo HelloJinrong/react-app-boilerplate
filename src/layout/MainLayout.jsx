@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 import { renderRoutes } from 'react-router-config';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const MainLayout = ({ route }) => {
 	const { routes } = route;

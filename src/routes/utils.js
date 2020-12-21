@@ -1,5 +1,5 @@
-import loadable from '@loadable/component';
 import { Redirect } from 'react-router-dom';
+import loadable from '@loadable/component';
 
 export const load = path => loadable(() => import(`../pages/${path}`));
 

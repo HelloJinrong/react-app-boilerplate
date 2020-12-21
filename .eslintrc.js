@@ -27,7 +27,16 @@ module.exports = {
 	},
 	rules: {
 		// simple-import-sort
-		'simple-import-sort/imports': 'error',
+		'simple-import-sort/imports': [
+			'error',
+			{
+				groups: [
+					['^react', '^@?\\w'],
+					// Style imports.
+					['^.+\\.s?css$']
+				]
+			}
+		],
 		'simple-import-sort/exports': 'error',
 
 		// react
