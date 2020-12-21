@@ -1,9 +1,9 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import './index.scss';
+
 import axios from 'axios';
 import QRCode from 'qrcode.react';
-
-import './index.scss';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Page1 = () => {
 	const history = useHistory();

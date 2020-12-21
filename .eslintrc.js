@@ -4,7 +4,7 @@ module.exports = {
 		'jest/globals': true
 	},
 	extends: ['standard', 'plugin:react/recommended'],
-	plugins: ['html', 'react', 'import', 'jest'],
+	plugins: ['html', 'react', 'import', 'jest', 'simple-import-sort'],
 	parser: '@babel/eslint-parser',
 	settings: {
 		'import/resolver': {},
@@ -26,6 +26,10 @@ module.exports = {
 		sourceType: 'module'
 	},
 	rules: {
+		// simple-import-sort
+		'simple-import-sort/imports': 'error',
+		'simple-import-sort/exports': 'error',
+
 		// react
 		'react/jsx-uses-react': 'error',
 		'react/jsx-uses-vars': 'error',

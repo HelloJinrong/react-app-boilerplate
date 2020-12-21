@@ -1,12 +1,9 @@
-/* eslint-disable no-undef */
-/* eslint-disable multiline-ternary */
-import { Suspense, Fragment } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { renderRoutes } from 'react-router-config';
-import { hot } from 'react-hot-loader/root';
-import { RecoilRoot } from 'recoil';
+import { Fragment, Suspense } from 'react';
 import { Inspector } from 'react-dev-inspector';
-
+import { hot } from 'react-hot-loader/root';
+import { renderRoutes } from 'react-router-config';
+import { BrowserRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 import routes from 'routes';
 
 const InspectorWrapper =

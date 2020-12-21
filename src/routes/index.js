@@ -1,5 +1,6 @@
-import { load, redirect } from './utils';
 import MainLayout from 'layout/MainLayout';
+
+import { load, redirect } from './utils';
 
 const routes = [
 	{
