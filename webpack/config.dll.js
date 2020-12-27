@@ -15,7 +15,11 @@ const config = {
 			'react-router-config',
 			'react-router-dom',
 			'recoil',
-			'lodash'
+			'lodash',
+			'axios',
+			'koa',
+			'koa-router',
+			'dayjs'
 		]
 	},
 	output: {
