@@ -1,10 +1,17 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
+import useNetworkStatus from 'components/useNetworkStatus';
+
 import './index.scss';
 
 const Page1 = () => {
 	const history = useHistory();
+
+	const connection = useNetworkStatus();
+
+	// eslint-disable-next-line no-console
+	console.log('connection =', connection);
 
 	const handleToPage = () => history.push('/page2');
 

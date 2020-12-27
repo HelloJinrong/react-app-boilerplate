@@ -77,6 +77,8 @@
 		"webpackbar": "^5.0.0-3"
 	},
 	"dependencies": {
+		"@loadable/component": "^5.14.1",
+		"@rehooks/network-status": "^1.0.0",
 		"axios": "^0.21.0",
 		"dayjs": "^1.9.7",
 		"formik": "^2.2.5",
