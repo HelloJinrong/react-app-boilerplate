@@ -1,42 +1,38 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-console */
-/* eslint-disable no-debugger */
-/* eslint-disable no-unused-vars */
+import { useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import useImageSize from 'components/useImageSize';
-import useInputValue from 'components/useInputValue';
+const set = new Set();
 
 const Page2 = () => {
-	const imageUrl = 'https://pic.feizl.com/upload/allimg/170614/235253EG-2.jpg';
 	const history = useHistory();
-	const [value, onChange] = useInputValue('qin');
-
-	const url = 'https://cdn.int64ago.org/ogk39i54.png';
-
-	const [width, height] = useImageSize(imageUrl);
-
-	console.log('w, h =', width, height);
+	const [count, setCount] = useState(0);
 	const handleToPage = () => history.push('/page1');
+	const handleAddCount = () => setCount(count + 1);
+	const handleRemoveCount = () => setCount(count - 1);
 
-	const handleGetValue = () => {
+	const obj = useMemo(
+		() => ({
+			name: 'qin',
+			age: 26
+		}),
+		[]
+	);
+
+	useEffect(() => {
+		set.add(obj);
 		// eslint-disable-next-line no-console
-		console.log('value =', value);
-
-		// setFirstName('qin');
-	};
-
-	const handleRemoveCookie = () => {
-		// removeFirstName('name');
-	};
+		console.log(set.size);
+	});
 
 	return (
 		<div className="page2">
-			this is Page2 component3434!
-			<input value={value} onChange={onChange}></input>
+			this is Page2 component ---- {count}! --- {set.size}
+			<p>
+				{obj.name} ---- {obj.age}
+			</p>
 			<button onClick={handleToPage}>to Page1</button>
-			<button onClick={handleGetValue}>获取输入框的值</button>
-			<button onClick={handleRemoveCookie}>移除cookie</button>
+			<button onClick={handleAddCount}>++</button>
+			<button onClick={handleRemoveCount}>--</button>
 		</div>
 	);
 };

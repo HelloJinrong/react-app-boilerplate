@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 
 import useNetworkStatus from 'components/useNetworkStatus';
 
+import MySelect from './Select';
+
 import './index.scss';
 
 const Page1 = () => {
@@ -21,6 +23,7 @@ const Page1 = () => {
 			<div>
 				<button onClick={handleToPage}>to Page2</button>
 			</div>
+			<MySelect />
 		</div>
 	);
 };

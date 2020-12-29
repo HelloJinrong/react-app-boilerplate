@@ -79,6 +79,7 @@
 	"dependencies": {
 		"@loadable/component": "^5.14.1",
 		"@rehooks/network-status": "^1.0.0",
+		"@rooks/use-select": "^4.5.0",
 		"axios": "^0.21.0",
 		"dayjs": "^1.9.7",
 		"formik": "^2.2.5",
@@ -93,7 +94,8 @@
 		"react-dom": "^17.0.1",
 		"react-router-config": "^5.1.1",
 		"react-router-dom": "^5.2.0",
-		"recoil": "^0.1.2"
+		"recoil": "^0.1.2",
+		"use-select": "0.0.6"
 	},
 	"husky": {
 		"hooks": {

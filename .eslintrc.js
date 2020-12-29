@@ -78,7 +78,10 @@ module.exports = {
 		'jest/valid-expect': 'error',
 
 		// prop-types
-		'react/prop-types': 2
+		'react/prop-types': 2,
+
+		//
+		'multiline-ternary': 0
 	},
 	globals: {
 		fetch: true,
