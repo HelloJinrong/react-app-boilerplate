@@ -4,7 +4,14 @@ module.exports = {
 		'jest/globals': true
 	},
 	extends: ['standard', 'plugin:react/recommended'],
-	plugins: ['html', 'react', 'import', 'jest', 'simple-import-sort'],
+	plugins: [
+		'html',
+		'react',
+		'import',
+		'jest',
+		'simple-import-sort',
+		'react-hooks'
+	],
 	parser: '@babel/eslint-parser',
 	settings: {
 		'import/resolver': {},
@@ -78,7 +85,11 @@ module.exports = {
 		'jest/valid-expect': 'error',
 
 		// prop-types
-		'react/prop-types': 2
+		'react/prop-types': 2,
+
+		// react-hooks
+		'react-hooks/rules-of-hooks': 'error',
+		'react-hooks/exhaustive-deps': 'warn'
 	},
 	globals: {
 		fetch: true,
