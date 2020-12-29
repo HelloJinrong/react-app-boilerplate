@@ -3,7 +3,11 @@ module.exports = {
 	env: {
 		'jest/globals': true
 	},
-	extends: ['standard', 'plugin:react/recommended'],
+	extends: [
+		'standard',
+		'plugin:react/recommended',
+		'plugin:react-hooks/recommended'
+	],
 	plugins: ['html', 'react', 'import', 'jest', 'simple-import-sort'],
 	parser: '@babel/eslint-parser',
 	settings: {
