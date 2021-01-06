@@ -8,11 +8,9 @@ import routes from 'routes';
 
 const App = () => (
 	<RecoilRoot>
-		{/* <<ErrorBoundary> */}
 		<Suspense fallback={<div>Loading...</div>}>
 			<BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
 		</Suspense>
-		{/* </ErrorBoundary> */}
 	</RecoilRoot>
 );
 

@@ -6,11 +6,11 @@ export const numState = atom({
 	default: 0,
 });
 
-export const describeUsers = selector({
-	key: 'describeUsers',
-	get: async () => {
-		const response = await axios.get('/api/users');
+// export const describeUsers = selector({
+// 	key: 'describeUsers',
+// 	get: async () => {
+// 		const response = await axios.get('/api/users');
 
-		return response.data;
-	},
-});
+// 		return response.data;
+// 	},
+// });
