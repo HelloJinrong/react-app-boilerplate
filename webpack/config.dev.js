@@ -32,23 +32,20 @@ const config = merge(baseConf, {
 		},
 		historyApiFallback: true,
 		hot: true,
+		inline: true,
 		quiet: true,
 		contentBase: [resolve('dll')],
 		publicPath: '/',
 		compress: true,
 		overlay: true,
-		stats: 'errors-only',
-		proxy: {
-			'/api': {
-				target: 'http://localhost:3001',
-				pathRewrite: { '^/api': '' }
-			}
-		}
+		stats: 'errors-only'
 	},
 	plugins: [
 		new WebpackBar({
 			name: 'development'
 		}),
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NamedModulesPlugin(),
 		new FaviconsWebpackPlugin(resolve('public/favicon.ico')),
 		new ESLintPlugin({
 			extensions: ['.js', '.jsx']

@@ -10,7 +10,7 @@ const Page1 = () => {
 
 	return (
 		<div className="page1">
-			this is Page1 component333!
+			this is Page1fdfdfe! df是颠三倒四
 			<div>
 				<button onClick={handleToPage}>to Page2</button>
 			</div>
@@ -19,11 +19,3 @@ const Page1 = () => {
 };
 
 export default Page1;
-
-/*
-
-	application/x-www-form-urlencoded => key1=value1&value2=value2
-	application/json => isJsonString
-	multipart/form-data => isFormData
-
-*/

@@ -63,6 +63,7 @@
 		"prettier": "^2.2.1",
 		"react-dev-inspector": "^1.1.0",
 		"react-hot-loader": "^4.13.0",
+		"react-refetch": "^3.0.1",
 		"sass": "^1.29.0",
 		"sass-loader": "^10.1.0",
 		"style-loader": "^2.0.0",
@@ -78,6 +79,7 @@
 		"webpackbar": "^5.0.0-3"
 	},
 	"dependencies": {
+		"@loadable/component": "^5.14.1",
 		"axios": "^0.21.0",
 		"dayjs": "^1.9.7",
 		"formik": "^2.2.5",
@@ -87,7 +89,6 @@
 		"koa-router": "^10.0.0",
 		"lodash": "^4.17.20",
 		"prop-types": "^15.7.2",
-		"qrcode.react": "^1.0.0",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
 		"react-router-config": "^5.1.1",

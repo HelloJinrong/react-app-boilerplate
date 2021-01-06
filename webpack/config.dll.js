@@ -17,8 +17,6 @@ const config = {
 			'recoil',
 			'lodash',
 			'axios',
-			'koa',
-			'koa-router',
 			'dayjs'
 		]
 	},
