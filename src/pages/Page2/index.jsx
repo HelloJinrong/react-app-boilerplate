@@ -7,7 +7,7 @@ const Page2 = () => {
 
 	return (
 		<div className="page2">
-			this is Page2 component232232323232232324! --
+			this is Page2 component!
 			<button onClick={handleToPage}>to Page1</button>
 		</div>
 	);

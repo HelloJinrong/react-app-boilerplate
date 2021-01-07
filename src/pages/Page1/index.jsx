@@ -10,7 +10,7 @@ const Page1 = () => {
 
 	return (
 		<div className="page1">
-			this is Page1fdfdfe! df是颠三倒四
+			this is Page1 component!
 			<div>
 				<button onClick={handleToPage}>to Page2</button>
 			</div>

@@ -26,6 +26,7 @@ const config = merge(baseConf, {
 	performance: {
 		hints: false
 	},
+	cache: true,
 	devServer: {
 		before: app => {
 			app.use(createLaunchEditorMiddleware());
