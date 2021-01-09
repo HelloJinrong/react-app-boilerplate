@@ -35,7 +35,14 @@ const config = {
 			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
+				include: resolve('src'),
 				use: [
+					{
+						loader: 'thread-loader',
+						options: {
+							workers: require('os').cpus()
+						}
+					},
 					{
 						loader: 'babel-loader',
 						options: {
@@ -54,6 +61,12 @@ const config = {
 				use: [
 					{
 						loader: MiniCssExtractPlugin.loader
+					},
+					{
+						loader: 'thread-loader',
+						options: {
+							workers: require('os').cpus()
+						}
 					},
 					'css-loader',
 					'postcss-loader',
