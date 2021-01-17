@@ -98,7 +98,8 @@ const config = {
 		}),
 		new DefinePlugin({
 			'process.env.PWD': JSON.stringify(process.cwd()),
-			BASE_URL: JSON.stringify(env[ENV_CONFIG].base_url)
+			BASE_URL:
+				NODE_ENV === 'production' && JSON.stringify(env[ENV_CONFIG].base_url)
 		})
 	]
 };
