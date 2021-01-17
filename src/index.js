@@ -10,3 +10,6 @@ rootEl.id = 'app';
 document.body.appendChild(rootEl);
 
 ReactDOM.render(<App />, rootEl);
+
+// eslint-disable-next-line no-console
+console.log('BASE_URL =', BASE_URL);

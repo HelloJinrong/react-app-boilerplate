@@ -2,8 +2,9 @@ const path = require('path');
 const { DefinePlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const env = require('../env');
 
-const { NODE_ENV } = process.env;
+const { NODE_ENV, ENV_CONFIG } = process.env;
 
 const isDev = NODE_ENV === 'development';
 
@@ -96,7 +97,8 @@ const config = {
 			chunkFilename: isDev ? 'css/[id].css' : 'css/[id].[hash].css'
 		}),
 		new DefinePlugin({
-			'process.env.PWD': JSON.stringify(process.cwd())
+			'process.env.PWD': JSON.stringify(process.cwd()),
+			BASE_URL: JSON.stringify(env[ENV_CONFIG].base_url)
 		})
 	]
 };

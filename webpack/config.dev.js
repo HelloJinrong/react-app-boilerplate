@@ -46,7 +46,6 @@ const config = merge(baseConf, {
 			name: 'development'
 		}),
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NamedModulesPlugin(),
 		new FaviconsWebpackPlugin(resolve('public/favicon.ico')),
 		new ESLintPlugin({
 			extensions: ['.js', '.jsx']

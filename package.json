@@ -5,7 +5,10 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/config.dev.js",
-		"build": "cross-env NODE_ENV=production webpack --config webpack/config.prod.js",
+		"build:prod": "cross-env NODE_ENV=production ENV_CONFIG=prod webpack --config webpack/config.prod.js",
+		"build:qa": "cross-env NODE_ENV=production ENV_CONFIG=qa webpack --config webpack/config.prod.js",
+		"build:uat": "cross-env NODE_ENV=production ENV_CONFIG=uat webpack --config webpack/config.prod.js",
+		"build:test": "cross-env NODE_ENV=production ENV_CONFIG=test webpack --config webpack/config.prod.js",
 		"build:dll": "webpack --config webpack/config.dll.js --mode development",
 		"mock": "node server/app.js",
 		"lint": "eslint --fix --ext .jsx,js .",

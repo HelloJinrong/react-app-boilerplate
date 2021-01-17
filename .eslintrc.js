@@ -93,6 +93,7 @@ module.exports = {
 	},
 	globals: {
 		fetch: true,
-		FormData: true
+		FormData: true,
+		BASE_URL: true
 	}
 };
