@@ -4,14 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const env = require('../env');
 
-const { NODE_ENV, ENV_CONFIG } = process.env;
+const { NODE_ENV } = process.env;
 
 const isDev = NODE_ENV === 'development';
 
 const resolve = dir => path.resolve(__dirname, '..', dir);
 
 const config = {
-	mode: NODE_ENV,
 	output: {
 		filename: 'js/[name].js',
 		path: resolve('dist')
@@ -58,10 +57,10 @@ const config = {
 				]
 			},
 			{
-				test: /\.s[ac]ss$/i,
+				test: /\.(sa|sc|c)ss$/i,
 				use: [
 					{
-						loader: MiniCssExtractPlugin.loader
+						loader: isDev ? 'style-loader' : MiniCssExtractPlugin.loader
 					},
 					{
 						loader: 'thread-loader',
@@ -84,6 +83,10 @@ const config = {
 						}
 					}
 				]
+			},
+			{
+				test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+				loader: 'file-loader'
 			}
 		]
 	},
@@ -98,8 +101,7 @@ const config = {
 		}),
 		new DefinePlugin({
 			'process.env.PWD': JSON.stringify(process.cwd()),
-			BASE_URL:
-				NODE_ENV === 'production' && JSON.stringify(env[ENV_CONFIG].base_url)
+			BASE_URL: JSON.stringify(env[NODE_ENV].base_url)
 		})
 	]
 };

@@ -1,0 +1,27 @@
+@font-face {
+    font-family: iconfont;
+    src: url("iconfont.eot");src: url("iconfont.eot?cec4d5a5#iefix") format("embedded-opentype"),
+             url("iconfont.woff2?cec4d5a5") format("woff2"),
+             url("iconfont.woff?cec4d5a5") format("woff"),
+             url("iconfont.ttf?cec4d5a5") format("truetype"),
+             url("iconfont.svg?cec4d5a5#iconfont") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="if"], [class*=" if"] {
+    font-family: 'iconfont' !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+}
+
+
+.if-aperture::before {
+    content: "\ea01";
+}
+
+.if-hat::before {
+    content: "\ea02";
+}
+

@@ -10,6 +10,7 @@ const baseConf = require('./config');
 const resolve = dir => path.resolve(__dirname, '..', dir);
 
 const config = {
+	mode: 'production',
 	devtool: false,
 	performance: {
 		hints: false

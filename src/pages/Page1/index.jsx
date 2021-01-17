@@ -14,6 +14,7 @@ const Page1 = () => {
 			<div>
 				<button onClick={handleToPage}>to Page2</button>
 			</div>
+			<i className="if if-hat"></i>
 		</div>
 	);
 };

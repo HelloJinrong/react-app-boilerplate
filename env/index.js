@@ -10,5 +10,8 @@ module.exports = {
 	},
 	prod: {
 		base_url: 'http://www.qinghuanI.com/prod'
+	},
+	development: {
+		base_url: 'http://www.qinghuanI.com/development'
 	}
 };

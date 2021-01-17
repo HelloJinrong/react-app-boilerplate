@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import 'styles/main.scss';
+import '../static/fonts/iconfont.css';
 
 const rootEl = document.createElement('div');
 rootEl.id = 'app';
