@@ -4,7 +4,11 @@ import Cookies from 'js-cookie';
 import resources from 'locales';
 
 const getCurrentSystemLang = () => {
-	return navigator.language === 'zh' ? 'zh_CN' : 'en';
+	if (navigator.language === 'zh') {
+		return 'zh_CN';
+	}
+
+	return navigator.language;
 };
 
 i18n.use(initReactI18next).init({

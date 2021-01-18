@@ -1,20 +1,21 @@
-import { renderRoutes } from 'react-router-config';
+// import { renderRoutes } from 'react-router-config';
 import { withRouter } from 'react-router-dom';
-import logo from 'assets/logo.svg';
 import PropTypes from 'prop-types';
 
 import Locales from './Locales';
+import Welcome from './Welcome';
 
 import './index.scss';
 
 const MainLayout = ({ route }) => {
-	const { routes } = route;
+	// const { routes } = route;
 
 	return (
 		<div className="main-layout">
-			<img src={logo} alt="logo"></img>
+			<i className="if if-logo" />
 			<Locales />
-			{renderRoutes(routes)}
+			<Welcome />
+			{/* {renderRoutes(routes)} */}
 		</div>
 	);
 };

@@ -1,3 +1,3 @@
 export default {
-	welcome: '欢迎使用 REACT 和 REACT-i18n ---- {{x}}'
+	WELCOME: 'React 是用于构建用户界面的 JavaScript 库'
 };

@@ -1,5 +1,4 @@
 import { Fragment, Suspense } from 'react';
-import { CookiesProvider } from 'react-cookie';
 import { Inspector } from 'react-dev-inspector';
 import { hot } from 'react-hot-loader/root';
 import { renderRoutes } from 'react-router-config';
@@ -18,13 +17,11 @@ const App = () => {
 			onHoverElement={params => {}}
 			onClickElement={params => {}}
 		>
-			<CookiesProvider>
-				<RecoilRoot>
-					<Suspense fallback={<div>Loading...</div>}>
-						<BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
-					</Suspense>
-				</RecoilRoot>
-			</CookiesProvider>
+			<RecoilRoot>
+				<Suspense fallback={<div>Loading...</div>}>
+					<BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
+				</Suspense>
+			</RecoilRoot>
 		</InspectorWrapper>
 	);
 };

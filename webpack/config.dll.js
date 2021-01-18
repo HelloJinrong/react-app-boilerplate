@@ -17,7 +17,10 @@ const config = {
 			'recoil',
 			'lodash',
 			'axios',
-			'dayjs'
+			'dayjs',
+			'js-cookie',
+			'i18next',
+			'react-i18next'
 		]
 	},
 	output: {

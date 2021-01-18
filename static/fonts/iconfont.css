@@ -1,10 +1,10 @@
 @font-face {
     font-family: iconfont;
-    src: url("iconfont.eot");src: url("iconfont.eot?cec4d5a5#iefix") format("embedded-opentype"),
-             url("iconfont.woff2?cec4d5a5") format("woff2"),
-             url("iconfont.woff?cec4d5a5") format("woff"),
-             url("iconfont.ttf?cec4d5a5") format("truetype"),
-             url("iconfont.svg?cec4d5a5#iconfont") format("svg");
+    src: url("iconfont.eot");src: url("iconfont.eot?0ebeeb97#iefix") format("embedded-opentype"),
+             url("iconfont.woff2?0ebeeb97") format("woff2"),
+             url("iconfont.woff?0ebeeb97") format("woff"),
+             url("iconfont.ttf?0ebeeb97") format("truetype"),
+             url("iconfont.svg?0ebeeb97#iconfont") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -23,5 +23,9 @@
 
 .if-hat::before {
     content: "\ea02";
+}
+
+.if-logo::before {
+    content: "\ea03";
 }
 
