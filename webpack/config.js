@@ -25,7 +25,8 @@ const config = {
 			components: resolve('src/components'),
 			styles: resolve('src/styles'),
 			assets: resolve('src/assets'),
-			utils: resolve('src/utils')
+			utils: resolve('src/utils'),
+			locales: resolve('src/locales')
 			// 'react-dom': '@hot-loader/react-dom'
 		},
 		extensions: ['.jsx', '.js', '.json']

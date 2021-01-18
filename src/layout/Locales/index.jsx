@@ -1,9 +1,13 @@
+import Cookie from 'js-cookie';
+
 import './index.scss';
 
 const Locales = () => {
 	const handleSwitchLang = event => {
-		// eslint-disable-next-line no-console
-		console.log(event.target.dataset.lang);
+		const lang = event.target.dataset.lang;
+
+		Cookie.set('lang', lang, { path: '/' });
+		window.location.reload();
 	};
 
 	return (

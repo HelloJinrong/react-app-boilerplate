@@ -1,5 +1,11 @@
 .page1 {
   display: flex;
+  justify-content: center;
+  margin-top: 40px;
   font-size: 24px;
   font-weight: bold;
+
+  p {
+    text-align: center;
+  }
 }

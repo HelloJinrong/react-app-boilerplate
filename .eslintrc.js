@@ -53,6 +53,7 @@ module.exports = {
 				]
 			}
 		],
+		camelcase: 0,
 		'simple-import-sort/exports': 'error',
 
 		// react
