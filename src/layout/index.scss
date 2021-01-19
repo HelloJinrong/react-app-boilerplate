@@ -9,5 +9,16 @@
     margin-bottom: 60px;
     font-size: 140px;
     color: #61dafb;
+    animation: spin 10s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
   }
 }
