@@ -9,6 +9,7 @@ const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const {
 	createLaunchEditorMiddleware
 } = require('react-dev-inspector/plugins/webpack');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const baseConf = require('./config');
 
@@ -51,6 +52,7 @@ const config = merge(baseConf, {
 		new ESLintPlugin({
 			extensions: ['.js', '.jsx']
 		}),
+		new StylelintPlugin(),
 		new webpack.DllReferencePlugin({
 			manifest: require(resolve('dll/vendor-manifest.json'))
 		}),
