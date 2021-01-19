@@ -1,5 +1,5 @@
 const path = require('path');
-const { DefinePlugin } = require('webpack');
+const { DefinePlugin, ProvidePlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const env = require('../env');
@@ -99,6 +99,9 @@ const config = {
 		new MiniCssExtractPlugin({
 			filename: isDev ? 'css/[name].css' : 'css/[name].[hash].css',
 			chunkFilename: isDev ? 'css/[id].css' : 'css/[id].[hash].css'
+		}),
+		new ProvidePlugin({
+			T: require.resolve('i18next')
 		}),
 		new DefinePlugin({
 			'process.env.PWD': JSON.stringify(process.cwd()),
