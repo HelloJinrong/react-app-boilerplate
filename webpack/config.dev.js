@@ -23,7 +23,6 @@ if (PORT) {
 
 const config = merge(baseConf, {
 	mode: 'development',
-	entry: ['./src/index.js'],
 	devtool: 'eval-cheap-module-source-map',
 	performance: {
 		hints: false

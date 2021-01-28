@@ -12,6 +12,12 @@ const resolve = dir => path.resolve(__dirname, '..', dir);
 const config = {
 	mode: 'production',
 	devtool: false,
+	output: {
+		path: resolve('dist'),
+		publicPath: '/',
+		filename: 'js/[name].[contenthash].js',
+		chunkFilename: 'js/[name].[contenthash].js'
+	},
 	performance: {
 		hints: false
 	},

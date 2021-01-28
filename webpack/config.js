@@ -11,10 +11,10 @@ const isDev = NODE_ENV === 'development';
 const resolve = dir => path.resolve(__dirname, '..', dir);
 
 const config = {
+	entry: ['./src/index.js'],
 	output: {
 		filename: 'js/[name].js',
 		path: resolve('dist')
-		// publicPath: '/'
 	},
 	resolve: {
 		alias: {
@@ -40,35 +40,23 @@ const config = {
 				include: resolve('src'),
 				use: [
 					{
-						loader: 'thread-loader',
-						options: {
-							workers: require('os').cpus()
-						}
-					},
-					{
 						loader: 'babel-loader',
 						options: {
 							cacheDirectory: true,
 							cacheCompression: true
 						}
 					},
-					{
+					isDev && {
 						loader: 'react-dev-inspector/plugins/webpack/inspector-loader',
 						options: { exclude: '' }
 					}
-				]
+				].filter(Boolean)
 			},
 			{
 				test: /\.(sa|sc|c)ss$/i,
 				use: [
 					{
 						loader: isDev ? 'style-loader' : MiniCssExtractPlugin.loader
-					},
-					{
-						loader: 'thread-loader',
-						options: {
-							workers: require('os').cpus()
-						}
 					},
 					'css-loader',
 					'postcss-loader',
@@ -95,12 +83,18 @@ const config = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: 'react-app-boilerplate',
-			path: resolve('public/index.html')
+			template: resolve('public/index.html'),
+			inject: true
 		}),
-		new MiniCssExtractPlugin({
-			filename: isDev ? 'css/[name].css' : 'css/[name].[hash].css',
-			chunkFilename: isDev ? 'css/[id].css' : 'css/[id].[hash].css'
-		}),
+		!isDev &&
+			new MiniCssExtractPlugin({
+				path: resolve('dist'),
+				publicPath: '/',
+				// linkType: 'text/css',
+				filename: 'css/[name].[hash].css',
+				chunkFilename: 'css/[id].[hash].css',
+				ignoreOrder: true
+			}),
 		new ProvidePlugin({
 			T: require.resolve('i18next')
 		}),
@@ -108,7 +102,7 @@ const config = {
 			'process.env.PWD': JSON.stringify(process.cwd()),
 			BASE_URL: JSON.stringify(env[NODE_ENV].base_url)
 		})
-	]
+	].filter(Boolean)
 };
 
 module.exports = config;
