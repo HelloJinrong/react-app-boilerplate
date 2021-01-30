@@ -1,4 +1,4 @@
-import { Fragment, Suspense } from 'react';
+import { Fragment, StrictMode, Suspense } from 'react';
 import { Inspector } from 'react-dev-inspector';
 import { hot } from 'react-hot-loader/root';
 import { renderRoutes } from 'react-router-config';
@@ -17,11 +17,13 @@ const App = () => {
 			onHoverElement={params => {}}
 			onClickElement={params => {}}
 		>
-			<RecoilRoot>
-				<Suspense fallback={<div>Loading...</div>}>
-					<BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
-				</Suspense>
-			</RecoilRoot>
+			<StrictMode>
+				<RecoilRoot>
+					<Suspense fallback={<div>Loading...</div>}>
+						<BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
+					</Suspense>
+				</RecoilRoot>
+			</StrictMode>
 		</InspectorWrapper>
 	);
 };

@@ -3,7 +3,7 @@
 	"window.zoomLevel": 0,
 
 	// editor UI
-	"editor.fontSize": 18,
+	"editor.fontSize": 20,
 	"editor.tabSize": 2,
 	"editor.formatOnType": true,
 	"editor.fontWeight": "500",
@@ -58,7 +58,7 @@
 	"terminal.integrated.cursorStyle": "line",
 
 	//  ESLint
-	"eslint.enable": true,
+	// "eslint.enable": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -124,7 +124,7 @@
 	],
 	"cSpell.showStatus": true,
 
-	// TODO
+	// todo
 	"todo-tree.tree.showScanModeButton": false,
 
 	// jsx snippet
