@@ -112,9 +112,7 @@
 		}
 	},
 	"sideEffects": [
-		"./src/**/*.scss",
-		"./src/**/*.css",
-		"./static/fonts/*.css",
-		"./static/fonts/*.scss"
+		"*.css",
+		"*.scss"
 	]
 }
