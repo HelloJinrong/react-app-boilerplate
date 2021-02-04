@@ -7,6 +7,7 @@ import App from './App';
 
 import 'styles/main.scss';
 import 'static/fonts/if.css';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 const rootEl = document.createElement('div');
 rootEl.id = 'app';

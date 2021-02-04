@@ -1,5 +1,12 @@
+import request from 'utils/request';
+
 const Welcome = () => {
-	return <div>{T.t('WELCOME')}</div>;
+	const handleRequest = async () => {
+		await request({
+			channel: '/users'
+		});
+	};
+	return <div onClick={handleRequest}>{T.t('WELCOME')}</div>;
 };
 
 export default Welcome;

@@ -3,6 +3,7 @@ import { Inspector } from 'react-dev-inspector';
 import { hot } from 'react-hot-loader/root';
 import { renderRoutes } from 'react-router-config';
 import { BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import { RecoilRoot } from 'recoil';
 import routes from 'routes';
 
@@ -20,7 +21,10 @@ const App = () => {
 			<StrictMode>
 				<RecoilRoot>
 					<Suspense fallback={<div>Loading...</div>}>
-						<BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
+						<BrowserRouter>
+							{renderRoutes(routes)}
+							<ToastContainer />
+						</BrowserRouter>
 					</Suspense>
 				</RecoilRoot>
 			</StrictMode>
