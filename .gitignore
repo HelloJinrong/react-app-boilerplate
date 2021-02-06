@@ -4,3 +4,4 @@ dist
 dll
 /static/fonts
 .DS_Store
+coverage
