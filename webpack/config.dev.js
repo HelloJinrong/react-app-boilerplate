@@ -5,12 +5,11 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const { merge } = require('webpack-merge');
 const portfinder = require('portfinder');
-const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const {
 	createLaunchEditorMiddleware
 } = require('react-dev-inspector/plugins/webpack');
 const StylelintPlugin = require('stylelint-webpack-plugin');
-
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const baseConf = require('./config');
 
 const resolve = dir => path.resolve(__dirname, '..', dir);
@@ -52,16 +51,7 @@ const config = merge(baseConf, {
 			extensions: ['.js', '.jsx']
 		}),
 		new StylelintPlugin(),
-		new webpack.DllReferencePlugin({
-			manifest: require(resolve('dll/vendor-manifest.json'))
-		}),
-		new AddAssetHtmlPlugin([
-			{
-				filepath: resolve('dll/vendor.js'),
-				outputPath: 'vendor',
-				publicPath: '/'
-			}
-		])
+		new HardSourceWebpackPlugin()
 	]
 });
 
