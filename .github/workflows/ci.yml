@@ -11,12 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Build and Deploy
-        uses: qinghuanI/react-app-boilerplate@master
-        env:
-          ACCESS_TOKEN: ${{ secrets.QINGHUANI }}
-          BRANCH: gh-pages
-          FOLDER: build
-          BUILD_SCRIPT: npm install && npm run build:prod
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build and Deploy
+      uses: qinghuanI/react-app-boilerplate@master
+      env:
+      DEFAULT_BRANCH: master
+      QINGHUANI: ${{ secrets.QINGHUANI }}
+      BRANCH: gh-pages
+      FOLDER: build
+      BUILD_SCRIPT: npm install && npm run build:prod
