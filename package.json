@@ -9,7 +9,6 @@
 		"build:qa": "cross-env NODE_ENV=qa webpack --config webpack/config.prod.js",
 		"build:uat": "cross-env NODE_ENV=uat webpack --config webpack/config.prod.js",
 		"build:test": "cross-env NODE_ENV=test webpack --config webpack/config.prod.js",
-		"build:dll": "webpack --config webpack/config.dll.js --mode development",
 		"build:icon": "node ./webpack/config.iconfont.js",
 		"preview:icon": "npm run build:icon && http-server ./static/fonts/",
 		"mock": "node server/app.js",
