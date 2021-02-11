@@ -1,21 +1,23 @@
 name: react-app-boilerplate
-
 on:
-  pull_request:
+  push:
     branches:
-      - 'master'
-
+      - master
 jobs:
-  automatic-build:
-    name: automatic build
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Build and Deploy
-      uses: qinghuanI/react-app-boilerplate@master
-      env:
-        DEFAULT_BRANCH: master
+    - name: Checkout
+      uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+      with:
+        persist-credentials: false
+    - name: Install and Build
+      run: |
+        npm install
+        npm run build:prod
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
         QINGHUANI: ${{ secrets.QINGHUANI }}
         BRANCH: gh-pages
         FOLDER: build
-        BUILD_SCRIPT: npm install && npm run build:prod
