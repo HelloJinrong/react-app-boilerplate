@@ -12,8 +12,7 @@ jobs:
 
     steps: 
     - name: Checkout
-    uses: actions/checkout@master
-
+      uses: actions/checkout@master
     - name: Build and Deploy
       uses: qinghuanI/react-app-boilerplate@master
       env:
