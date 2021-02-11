@@ -1,5 +1,7 @@
 import { useHistory } from 'react-router-dom';
 
+import './index.scss';
+
 const Page2 = () => {
 	const history = useHistory();
 
