@@ -12,7 +12,8 @@
 		"styl",
 		"portfinder",
 		"qinghuanI",
-		"formik"
+		"formik",
+		"toastify"
 	],
 	"flagWords": [],
 	"ignorePaths": ["src/assets/**/*"]
