@@ -4,6 +4,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 const baseConf = require('./config');
 
@@ -30,6 +31,7 @@ const config = {
 		new Webpackbar({
 			name: 'production'
 		}),
+		new WebpackManifestPlugin(),
 		new CleanWebpackPlugin(),
 		new CopyPlugin({
 			patterns: [{ from: resolve('public/favicon.ico'), to: resolve('dist') }]
