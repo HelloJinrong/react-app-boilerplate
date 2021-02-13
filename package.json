@@ -19,7 +19,7 @@
 		"test": "jest --passWithNoTests",
 		"test:coverage": "jest --coverage"
 	},
-	"homepage": "http://qinghuanI.github.io/react-app-boilerplate",
+	"homepage": "https://qinghuanI.github.io/react-app-boilerplate",
 	"keywords": [
 		"react",
 		"webpack"
