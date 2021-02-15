@@ -4,6 +4,7 @@
 		"experimentalDecorators": true,
 		"module": "commonjs",
 		"target": "esnext",
+		"jsx": "preserve",
 		"baseUrl": ".",
 		"paths": {
 			"pages": ["./src/pages"],
