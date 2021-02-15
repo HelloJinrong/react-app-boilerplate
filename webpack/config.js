@@ -81,7 +81,8 @@ const config = {
 						loader: 'file-loader',
 						options: {
 							outputPath: 'fonts',
-							publicPath: '/fonts'
+							publicPath:
+								TARGET === 'github' ? '/react-app-boilerplate/fonts' : '/fonts'
 						}
 					}
 				]
