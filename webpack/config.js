@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const env = require('../env');
 
-const { NODE_ENV } = process.env;
+const { NODE_ENV, TARGET } = process.env;
 
 const isDev = NODE_ENV === 'development';
 
@@ -97,8 +97,7 @@ const config = {
 		!isDev &&
 			new MiniCssExtractPlugin({
 				path: resolve('dist'),
-				publicPath: '/',
-				// linkType: 'text/css',
+				publicPath: TARGET === 'github' ? '/react-app-boilerplate' : '/',
 				filename: 'css/[name].[hash].css',
 				chunkFilename: 'css/[id].[hash].css',
 				ignoreOrder: true

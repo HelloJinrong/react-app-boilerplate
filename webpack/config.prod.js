@@ -7,7 +7,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 const baseConf = require('./config');
-
+const { TARGET } = process.env;
 const resolve = dir => path.resolve(__dirname, '..', dir);
 
 const config = {
@@ -15,7 +15,7 @@ const config = {
 	devtool: false,
 	output: {
 		path: resolve('dist'),
-		publicPath: '/',
+		publicPath: TARGET === 'github' ? '/react-app-boilerplate' : '/',
 		filename: 'js/[name].[contenthash].js',
 		chunkFilename: 'js/[name].[contenthash].js'
 	},

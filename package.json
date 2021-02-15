@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "cross-env NODE_ENV=development  webpack-dev-server --config webpack/config.dev.js",
+		"publish": "cross-env NODE_ENV=prod TARGET=github webpack --config webpack/config.prod.js",
 		"build:prod": "cross-env NODE_ENV=prod webpack --config webpack/config.prod.js",
 		"build:qa": "cross-env NODE_ENV=qa webpack --config webpack/config.prod.js",
 		"build:uat": "cross-env NODE_ENV=uat webpack --config webpack/config.prod.js",
