@@ -2,6 +2,10 @@
 
 A simple React Application boilerplate which routes to different pages on user interaction, made from scratch using react-router-config, recoil .
 
+# Online Preview
+
+click [https://qinghuani.github.io/react-app-boilerplate/](https://qinghuani.github.io/react-app-boilerplate/)
+
 # How to use
 
 1. Clone the boilerplate repo.
