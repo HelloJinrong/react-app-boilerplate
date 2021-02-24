@@ -2,6 +2,7 @@ const path = require('path');
 const Webpackbar = require('webpackbar');
 const TerserPlugin = require('terser-webpack-plugin');
 const { merge } = require('webpack-merge');
+const { ESBuildMinifyPlugin } = require('esbuild-loader');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
@@ -25,7 +26,12 @@ const config = {
 	optimization: {
 		usedExports: true,
 		minimize: true,
-		minimizer: [new TerserPlugin()]
+		minimizer: [
+			new TerserPlugin(),
+			new ESBuildMinifyPlugin({
+				target: 'es2015'
+			})
+		]
 	},
 	plugins: [
 		new Webpackbar({
@@ -34,7 +40,12 @@ const config = {
 		new WebpackManifestPlugin(),
 		new CleanWebpackPlugin(),
 		new CopyPlugin({
-			patterns: [{ from: resolve('public/favicon.ico'), to: resolve('dist') }]
+			patterns: [
+				{
+					from: resolve('public/favicon.ico'),
+					to: resolve('dist')
+				}
+			]
 		})
 	]
 };

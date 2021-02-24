@@ -1,4 +1,5 @@
 // import { renderRoutes } from 'react-router-config';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 

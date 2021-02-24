@@ -1,5 +1,6 @@
 const path = require('path');
 const { DefinePlugin, ProvidePlugin } = require('webpack');
+const { ESBuildPlugin } = require('esbuild-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const env = require('../env');
@@ -40,10 +41,10 @@ const config = {
 				include: resolve('src'),
 				use: [
 					{
-						loader: 'babel-loader',
+						loader: 'esbuild-loader',
 						options: {
-							cacheDirectory: true,
-							cacheCompression: true
+							loader: 'jsx',
+							target: 'es2015'
 						}
 					},
 					isDev && {
@@ -90,6 +91,7 @@ const config = {
 		]
 	},
 	plugins: [
+		new ESBuildPlugin(),
 		new HtmlWebpackPlugin({
 			title: 'react-app-boilerplate',
 			template: resolve('public/index.html'),

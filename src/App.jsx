@@ -1,4 +1,4 @@
-import { Fragment, StrictMode, Suspense } from 'react';
+import React, { Fragment, StrictMode, Suspense } from 'react';
 import { Inspector } from 'react-dev-inspector';
 import { hot } from 'react-hot-loader/root';
 import { renderRoutes } from 'react-router-config';
