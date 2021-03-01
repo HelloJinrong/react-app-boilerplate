@@ -7,15 +7,15 @@
 		"jsx": "preserve",
 		"baseUrl": ".",
 		"paths": {
-			"pages": ["./src/pages"],
-			"routes": ["./src/routes"],
-			"layout": ["./src/layout"],
-			"stores": ["./src/stores"],
-			"styles": ["./src/styles"],
-			"utils": ["./src/utils"],
-			"components": ["./src/components"],
-			"assets": ["./src/assets"],
-			"locales": ["./src/locales"]
+			"pages/*": ["./src/pages/*"],
+			"routes/*": ["./src/routes/*"],
+			"layout/*": ["./src/layout/*"],
+			"stores/*": ["./src/stores/*"],
+			"styles/*": ["./src/styles/*"],
+			"utils/*": ["./src/utils/*"],
+			"components/*": ["./src/components/*"],
+			"assets/*": ["./src/assets/*"],
+			"locales/*": ["./src/locales/*"]
 		}
 	},
 	"exclude": ["node_modules", "dist", "tests"]
