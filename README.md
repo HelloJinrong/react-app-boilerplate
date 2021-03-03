@@ -14,7 +14,7 @@ click [https://qinghuani.github.io/react-app-boilerplate/](https://qinghuani.git
 git clone https://github.com/qinghuanI/react-app-boilerplate.git
 ```
 
-2. `npm i` to install npm packages.
-3. Use `npm run build:dll` to build dlls.
-4. Start dev server using `npm run dev`.
-5. Build and bundling your resources for production `npm run build`.
+2. `npx pnpm i` to install npm packages.
+3. Convert svg picture to font icon with `npx pnpm run build:icon`.
+4. Start dev server using `npx pnpm run dev`.
+5. Build and bundling your resources for production `npx pnpm run build:prod`.
